@@ -1,1 +1,56 @@
 
+
+<div id="maytinh">
+  <table>
+    <tr>
+      <td colspan="4">
+        <input type="text" disabled [ngModel]="screen()">
+      </td>
+    </tr>
+    <tr>
+      <td colspan="4">
+        <input type="text" disabled *ngIf="total >=0 && !phepTinh" [(ngModel)]="value1">
+        <input type="text" disabled *ngIf="isValue2" [(ngModel)]="value2">
+        <input type="text" disabled *ngIf="!value2 && phepTinh" [(ngModel)]="phepTinh">
+      </td>
+    </tr>
+    <tr>
+      <td><button class="operator" (click)="setPhepTinh('%')">%</button></td>
+      <td><button class="operator" (click)="setPhepTinh('CE')">CE</button></td>
+      <td><button class="operator" (click)="setPhepTinh('C')">C</button></td>
+      <td><button class="operator" (click)="reset()">AC</button></td>
+    </tr>
+    <tr>
+      <td><button class="operator" (click)="setPhepTinh('1/2')">1<sub>/2</sub></button></td>
+      <td><button class="operator" (click)="setPhepTinh('x^2')">x<sup>2</sup></button></td>
+      <td><button class="operator" (click)="setPhepTinh('căn2')">&radic;<span>2</span></button></td>
+      <td><button class="operator" (click)="setPhepTinh('/')">/</button></td>
+    </tr>
+    <tr>
+      <td><button class="digit" (click)="banPhim('7')">7</button></td>
+      <td><button class="digit" (click)="banPhim('8')">8</button></td>
+      <td><button class="digit" (click)="banPhim('9')">9</button></td>
+      <td><button class="operator" (click)="setPhepTinh('*')">*</button></td>
+    </tr>
+    <tr>
+      <td><button class="digit" (click)="banPhim('4')">4</button></td>
+      <td><button class="digit" (click)="banPhim('5')">5</button></td>
+      <td><button class="digit" (click)="banPhim('6')">6</button></td>
+      <td><button class="operator" (click)="setPhepTinh('-')">-</button></td>
+    </tr>
+    <tr>
+      <td><button class="digit" (click)="banPhim('1')">1</button></td>
+      <td><button class="digit" (click)="banPhim('2')">2</button></td>
+      <td><button class="digit" (click)="banPhim('3')">3</button></td>
+      <td><button class="operator" (click)="setPhepTinh('+')">+</button></td>
+    </tr>
+    <tr>
+      <td><button class="operator" (click)="setPhepTinh('+/-')">+/-</button></td>
+      <td><button class="digit" (click)="banPhim('0')">0</button></td>
+      <td><button class="operator" (click)="banPhim(',')">,</button></td>
+      <td><button class="operator" (click)="ketQua()">=</button></td>
+    </tr>
+  </table>
+</div>
+
+
